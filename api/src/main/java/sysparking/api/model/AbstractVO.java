@@ -1,9 +1,18 @@
 package sysparking.api.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class AbstractVO {
-	Long id;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class AbstractVO implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	private Long id;
 
 	public Long getId() {
 		return id;
